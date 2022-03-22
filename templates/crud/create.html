@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+      {% extends 'crud/base.html' %}
+    <title>create Form</title>
+  </head>
+  <body>
+      {% block content %}
+        <h1>Add new Students name hear</h1>
+        <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Add Student">
+        <a href="/check"><button type="button" name="button">Student Deatails</button></a>
+        </form>
+      {% endblock %}
+      <button type="button" name="button"></button>
+  </body>
+</html>

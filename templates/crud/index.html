@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% extends 'crud/base.html' %}
+    <title>CRUD testing</title>
+  </head>
+  <body>
+      {% block content %}
+      <h1>Student Deatails</h1>
+      <table>
+        <thead>
+          <th>Student No</th>
+          <th>Student Name</th>
+          <th>Student class</th>
+          <th>Student Address</th>
+        </thead>
+        <tr>
+          {% for i in student %}
+          <td>{{ i.sno }}</td>
+          <td>{{ i.sname }}</td>
+          <td>{{ i.sclass }}</td>
+          <td>{{ i.saddress }}</td>
+          <td><a href="/update/{{i.id}}">Update</a>   <a href="/delete/{{ i.id }}">Delete</a></td>
+          {% csrf_token %}
+
+        </tr>
+        {% endfor %}
+      </table>
+      <a href="/create"><button type="button" name="button">Add New Sudent</button></a>
+
+      {% endblock %}
+  </body>
+</html>

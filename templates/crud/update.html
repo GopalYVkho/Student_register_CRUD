@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+      {% extends 'crud/base.html' %}
+    <title>Update Form</title>
+  </head>
+  <body>
+      {% block content %}
+        <h1>Update student Detailes</h1>
+        <form method="post">
+          {% csrf_token %}
+          Student Rollno<input type="text" name="sno" value="{{student.sno}}">
+          Student Name<input type="text" name="sname" value="{{student.sname}}">
+          Student Class<input type="text" name="sclass" value="{{student.sclass}}">
+          Student Address<input type="text" name="saddress" value="{{student.saddress}}">
+          <input type="submit" value="Update student Detailes">
+
+
+        </form>
+      {% endblock %}
+  </body>
+</html>
